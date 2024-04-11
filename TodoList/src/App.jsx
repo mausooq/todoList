@@ -1,9 +1,7 @@
 import { useState } from 'react'
+import Home from "./home"
 import './App.css'
-import Home from './Home'
 function App() {
-
-
   return (
     <>
       <Home/>
