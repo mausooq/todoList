@@ -1,9 +1,11 @@
+import axios from 'axios'
 import React, { useState } from 'react'
-
 function Create() {
   const [ task,setTask] = useState()
-  const handelAdd = () =>{
-    
+  const addTask = () =>{
+    axios.post('https://localhost:8080/addTask',{task:task},)
+    .then(result =>console.log(result))
+    .catch (error => console.log(error))
   }
   return (
     <div className='create_form'>
