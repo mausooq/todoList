@@ -8,6 +8,12 @@ app.use(cors())
 app.use(express.json());
 mongoose.connect('mongodb+srv://abdulmausooq:8080@fuegocluster.c8hjaqp.mongodb.net/todos')
 
+app.get('/getTodo',(req,res) => {
+   todoModel.find()
+   .then(result => res.json(result))
+   .catch(err => res.json(err))
+})
+
 app.post('/addTask',(req,res) =>{
     const task = req.body.task;
     console.log(task);
