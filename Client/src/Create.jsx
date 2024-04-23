@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 function Create() {
   const [ task,setTask] = useState()
   const addTask = () =>{
-    axios.post('https://localhost:8080/addTask',{task:task},)
+    axios.post('http://localhost:8080/addTask',{task:task},)
     .then(result =>console.log(result))
     .catch (error => console.log(error))
   }
