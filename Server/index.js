@@ -14,7 +14,19 @@ app.get('/getTodo',(req,res) => {
    .catch(err => res.json(err))
 })
 
-app.post('/addTask',(req,res) =>{
+app.get('/delete',(req,res) => {
+   todoModel.find()
+   .then(result => res.json(result))
+   .catch(err => res.json(err))
+})
+
+app.get('/update',(req,res) => {
+   todoModel.find()
+   .then(result => res.json(result))
+   .catch(err => res.json(err))
+})
+
+app.post('/edit',(req,res) =>{
     const task = req.body.task;
     console.log(task);
     todoModel.create({
