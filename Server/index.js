@@ -26,7 +26,7 @@ app.get('/update',(req,res) => {
    .catch(err => res.json(err))
 })
 
-app.post('/edit',(req,res) =>{
+app.post('/addTask',(req,res) =>{
     const task = req.body.task;
     console.log(task);
     todoModel.create({
