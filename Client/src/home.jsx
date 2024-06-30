@@ -3,11 +3,12 @@ import Create from './Create';
 import axios from 'axios';
 
 function Home(){
-    const [todos, setTodos] =useState([])
+    const [todos, setTodos] = useState([]);
+
     useEffect(() => {
         axios.get('http://localhost:8080/getTodo')
-        .then(response => setTodos(response.data))
-        .catch(error => console.log(error));
+            .then(response => setTodos(response.data))
+            .catch(error => console.log(error));
     }, []);
     
     return(
@@ -20,11 +21,10 @@ function Home(){
                 <div><h2>No Record</h2></div>
             :
             todos.map(todo => (
-                <div className='HomeTask'>
+                <div className='HomeTask' key={todo.id} style={{height:'30px'}}>
                     <p>{todo.task}</p>
                 </div>
             ))
-        
            }
         </div>
     )
